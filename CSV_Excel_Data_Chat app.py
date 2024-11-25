@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import random
 import time
+from dotenv import load_dotenv
 from pandasai import SmartDataframe
 from pandasai.llm import GoogleGemini
 from pandasai.responses.response_parser import ResponseParser
@@ -48,7 +49,7 @@ with st.expander("🔎 Your Data Preview"):
 query = st.text_area("🗣️ Type Here ")
 button = st.button('Submit')
 if query and button == True:
-    os.environ['GOOGLE_API_KEY'] = "AIzaSyA1e7inOhwkiNheR-Qxp1wQiEobf3iL-4o"
+    os.environ['GOOGLE_API_KEY'] = "GOOGLE_API_KEY"
     #genai.configure(api_key = os.environ['GOOGLE_API_KEY'])
     #model = genai.GenerativeModel('gemini-pro')
     llm = GoogleGemini(api_key = os.environ['GOOGLE_API_KEY'])
