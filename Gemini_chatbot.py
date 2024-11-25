@@ -5,6 +5,7 @@ import pandas as pd
 import random
 import time
 import google.generativeai as genai
+from dotenv import load_dotenv
 from pandasai import SmartDataframe
 from pandasai.llm import GoogleGemini
 from pandasai.responses.response_parser import ResponseParser
@@ -35,7 +36,7 @@ for message in st.session_state.messages:
     #response=chat.send_message(question,stream=True)
     #return response
 if prompt := st.chat_input("Ask Something"):
-    os.environ['GOOGLE_API_KEY'] = "AIzaSyA1e7inOhwkiNheR-Qxp1wQiEobf3iL-4o"
+    os.environ['GOOGLE_API_KEY'] = "GOOGLE_API_KEY"
     genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
     model = genai.GenerativeModel(model_name='gemini-1.5-pro')
     #for role, text in st.session_state['chat_history']:
