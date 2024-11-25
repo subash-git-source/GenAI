@@ -3,6 +3,7 @@ import os
 import streamlit as st
 import google.generativeai as genai
 from PyPDF2 import PdfReader
+from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain.vectorstores import FAISS
@@ -10,7 +11,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.chains.question_answering import load_qa_chain
 from langchain.prompts import PromptTemplate
 
-os.environ["GOOGLE_API_KEY"] = "AIzaSyA1e7inOhwkiNheR-Qxp1wQiEobf3iL-4o"
+os.environ["GOOGLE_API_KEY"] = "GOOGLE_API_KEY"
 genai.configure(api_key = os.environ["GOOGLE_API_KEY"])
 
 #loading documents
