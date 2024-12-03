@@ -39,7 +39,7 @@ with st.sidebar:
     uploaded_file = st.file_uploader("Choose a file")
 
 if uploaded_file is None: 
-    st.info("upload a file through config", icon= "i")
+    st.info("upload a file through config")
     st.stop()
 
 df = load_data(uploaded_file)
